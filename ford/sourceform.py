@@ -351,7 +351,7 @@ class FortranBase(object):
             self.meta['summary'] = md.convert(self.meta['summary'])
             self.meta['summary'] = ford.utils.sub_macros(ford.utils.sub_notes(self.meta['summary']),self.base_url)
         elif PARA_CAPTURE_RE.search(self.doc):
-            self.meta['summary'] = PARA_CAPTURE_RE.search(self.doc).group()
+            self.meta['summary'] = self.doc
         else:
             self.meta['summary'] = ''
         if self.meta['summary'].strip() != self.doc.strip():
